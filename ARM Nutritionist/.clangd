@@ -1,0 +1,15 @@
+CompileFlags:
+  # compile_commands.json was copied from the old "Budgeat" folder and still
+  # contains stale include paths. Add the correct BudgeatCurrent paths here so
+  # clangd can find moc_predefs.h and the generated build headers.
+  CompilationDatabase: build/Desktop_Qt_6_10_2_MSVC2022_64bit-Debug/.qtc_clangd
+  Add:
+    - -IC:\Users\Zalman\OneDrive\Документы\BudgeatCurrent\build\Desktop_Qt_6_10_2_MSVC2022_64bit-Debug\debug
+    - -IC:\Users\Zalman\OneDrive\Документы\BudgeatCurrent\build\Desktop_Qt_6_10_2_MSVC2022_64bit-Debug
+    - -IC:\Users\Zalman\OneDrive\Документы\BudgeatCurrent
+
+Diagnostics:
+  Suppress:
+    # moc-generated files include moc_predefs.h which is a Qt build artifact;
+    # this suppresses the residual "not used directly" note on algorithm.
+    - pp_including_mainfile_in_preamble
